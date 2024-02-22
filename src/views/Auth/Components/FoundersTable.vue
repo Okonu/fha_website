@@ -31,18 +31,33 @@
     </table>
   </template>
   
-  <script>
-  export default {
-    props: {
-      founders: {
-        type: Array,
-        required: true
-      }
-    }
+  <script setup lang="ts">
+  import { defineProps } from 'vue';
+  interface Founder {
+  id: string;
+  name: string;
+  email: string;
+  detail: {
+    company_name: string;
+    business_type: string;
+    financial_level: string;
+    focus_area: string;
+    challenges: string;
+    funding_status: string;
+    partnership: string;
+    community_support: string;
+  };
+}
+const props = defineProps({
+  founders: {
+    type: Array as () => Founder[],
+    required: true
   }
-  </script>
+});
+</script>
   
-  <style scoped>
+  
+ <style scoped>
   .founders-table {
     width:   100%;
     border-collapse: collapse;
