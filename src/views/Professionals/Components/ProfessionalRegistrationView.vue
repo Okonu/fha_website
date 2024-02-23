@@ -17,6 +17,7 @@
             We're excited to have you considering membership in our dynamic tech community. 
             As a member, you'll not only gain credibility within the industry but also unlock a world of job opportunities and countless benefits. 
             Join us on this exhilarating journey to reshape Africa's tech landscape!
+            <br/>
           </p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 flex-grow">
             <div class="flex flex-col">
