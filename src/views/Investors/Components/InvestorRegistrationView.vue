@@ -14,63 +14,57 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 flex-grow">
           <input type="text" v-model="name" placeholder="Name" class="input-field" required />
           <input type="email" v-model="email" placeholder="Email" class="input-field" required />
-        <select v-model="enterpriseLevel" class="input-field" required>
-          <option value="">Startup</option>
-          <option value="established">Established</option>
-          <option value="idea">Idea Stage</option>
-          <option value="startup">Startup</option>
-        </select>
-        <select v-model="viability" class="input-field" required>
-          <option value="">Startup</option>
-          <option value="established">Established</option>
-          <option value="idea">Idea Stage</option>
-          <option value="startup">Startup</option>
-        </select>
-        <select v-model="impact" class="input-field" required>
-          <option value="">Startup</option>
-          <option value="established">Established</option>
-          <option value="idea">Idea Stage</option>
-          <option value="startup">Startup</option>
-        </select>
-        <select v-model="focusArea" class="input-field" required>
-          <option value="">Startup</option>
-          <option value="established">Established</option>
-          <option value="idea">Idea Stage</option>
-          <option value="startup">Startup</option>
-        </select>
-        <select v-model="convenientInvesting" class="input-field" required>
-          <option value="">Startup</option>
-          <option value="established">Established</option>
-          <option value="idea">Idea Stage</option>
-          <option value="startup">Startup</option>
-        </select>
-        <select v-model="coInvesting" class="input-field" required>
-          <option value="">Startup</option>
-          <option value="established">Established</option>
-          <option value="idea">Idea Stage</option>
-          <option value="startup">Startup</option>
-        </select>
-        <input type="text" v-model="concern" placeholder="Concern" class="input-field" required />
-        <input type="text" v-model="expectation" placeholder="Expectation" class="input-field" required />
-      </div>
-      <button type="submit" class="submit-button w-full">Submit</button>
-    </form>
-  </div>
-</div>
 
+          <select v-model="enterpriseLevel" class="input-field" required>
+            <option value="">Select Enterprise Level</option>
+            <option v-for="level in enterpriseLevels" :key="level" :value="level">{{ level }}</option>
+          </select>
+
+          <select v-model="coInvesting" class="input-field" required>
+            <option value="">Select Co-Investing Option</option>
+            <option v-for="option in coInvestingOptions" :key="option" :value="option">{{ option }}</option>
+          </select>
+
+          <select v-model="convenientInvesting" class="input-field" required>
+            <option value="">Select Convenient Investing Option</option>
+            <option v-for="option in convenientInvestingOptions" :key="option" :value="option">{{ option }}</option>
+          </select>
+
+          <select v-model="focusArea" class="input-field" required>
+            <option value="">Select Focus Area</option>
+            <option v-for="area in focusAreaOptions" :key="area" :value="area">{{ area }}</option>
+          </select>
+
+          <select v-model="impact" class="input-field" required>
+            <option value="">Select Impact</option>
+            <option v-for="impact in impactOptions" :key="impact" :value="impact">{{ impact }}</option>
+          </select>
+
+          <select v-model="viability" class="input-field" required>
+            <option value="">Select Viability</option>
+            <option v-for="viability in viabilityOptions" :key="viability" :value="viability">{{ viability }}</option>
+          </select>
+
+          <input type="text" v-model="expectation" placeholder="Expectation" class="input-field" required />
+          <input type="text" v-model="concern" placeholder="Concern" class="input-field" required />
+        </div>
+        <button type="submit" class="submit-button w-full">Submit</button>
+      </form>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 // @ts-nocheck
-import { ref } from 'vue';
-import { useRouter } from 'vue-router';
+import { ref, onMounted } from 'vue';
 import Notification from '@/views/Components/Notification.vue';
 import Loader from '@/views/Components/Loader.vue';
-import { defineProps, defineEmits } from 'vue';
 import { BASE_URL } from '@/config/api.js';
 
-
 const showLoader = ref(false);
+const showNotification = ref(false);
+const notificationMessage = ref('');
+const notificationType = ref('success');
 
 const props = defineProps({
   show: Boolean,
@@ -81,7 +75,6 @@ const emit = defineEmits(['close']);
 const closeForm = () => {
   emit('close');
 };
-
 
 const name = ref('');
 const email = ref('');
@@ -94,13 +87,36 @@ const viability = ref('');
 const expectation = ref('');
 const concern = ref('');
 
-const showNotification = ref(false);
-const notificationMessage = ref('');
-const notificationType = ref('success');
+const enterpriseLevels = ref([]);
+const coInvestingOptions = ref([]);
+const convenientInvestingOptions = ref([]);
+const focusAreaOptions = ref([]);
+const impactOptions = ref([]);
+const viabilityOptions = ref([]);
 
-const showInvestorForm = ref(false);
+onMounted(async () => {
+  try {
+    const enterpriseLevelsResponse = await fetch(`${BASE_URL}/api/enums/enterprise-levels`);
+    enterpriseLevels.value = await enterpriseLevelsResponse.json();
 
-const router = useRouter();
+    const coInvestingOptionsResponse = await fetch(`${BASE_URL}/api/enums/co-investings`);
+    coInvestingOptions.value = await coInvestingOptionsResponse.json();
+
+    const convenientInvestingOptionsResponse = await fetch(`${BASE_URL}/api/enums/convenient-investments`);
+    convenientInvestingOptions.value = await convenientInvestingOptionsResponse.json();
+
+    const focusAreaOptionsResponse = await fetch(`${BASE_URL}/api/enums/investor-focus-areas`);
+    focusAreaOptions.value = await focusAreaOptionsResponse.json();
+
+    const impactOptionsResponse = await fetch(`${BASE_URL}/api/enums/social-env-impacts`);
+    impactOptions.value = await impactOptionsResponse.json();
+
+    const viabilityOptionsResponse = await fetch(`${BASE_URL}/api/enums/viability-criterias`);
+    viabilityOptions.value = await viabilityOptionsResponse.json();
+  } catch (error) {
+    console.error('Failed to fetch enum values:', error);
+  }
+});
 
 const submitForm = async () => {
   showLoader.value = true;
@@ -135,19 +151,17 @@ const submitForm = async () => {
       notificationType.value = 'error';
     }
     showNotification.value = true;
-    showInvestorForm.value = false;
-    } catch (error) {
-        notificationMessage.value = 'An error occurred.';
-        notificationType.value = 'error';
-        showNotification.value = true;
-        showInvestorForm.value = false;  
-      } finally {
+  } catch (error) {
+    notificationMessage.value = 'An error occurred.';
+    notificationType.value = 'error';
+    showNotification.value = true;
+  } finally {
     showLoader.value = false;
   }
-    closeForm();
-  }
-
+  closeForm();
+};
 </script>
+
 <style scoped>
 .input-field {
   width:   100%;
