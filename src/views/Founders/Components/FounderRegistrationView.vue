@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// @ts-nocheck
+
   import { ref, onMounted } from 'vue';
   import Notification from '@/views/Components/Notification.vue';
   import Loader from '@/views/Components/Loader.vue';

@@ -12,41 +12,57 @@
     <div class="bg-white p-6 rounded shadow-lg w-full max-w-4xl h-full backdrop-filter backdrop-blur-md" @click.stop>
       <form @submit.prevent="submitForm" class="w-full h-full flex flex-col justify-between">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 flex-grow">
-          <input type="text" v-model="name" placeholder="Name" class="input-field" required />
-          <input type="email" v-model="email" placeholder="Email" class="input-field" required />
+          <label for="name">What is your name?</label>
+          <input type="text" id="name" v-model="name" placeholder="Name" class="input-field" required />
 
-          <select v-model="enterpriseLevel" class="input-field" required>
+          <label for="email">What is your email address?</label>
+          <input type="email" id="email" v-model="email" placeholder="Email" class="input-field" required />
+
+          <label for="enterpriseLevel">As an investor, which level of tech enterprise/company would you like to invest in?</label>
+          <select id="enterpriseLevel" v-model="enterpriseLevel" class="input-field" required>
             <option value="">Select Enterprise Level</option>
             <option v-for="level in enterpriseLevels" :key="level" :value="level">{{ level }}</option>
           </select>
 
-          <select v-model="coInvesting" class="input-field" required>
+          <label for="coInvesting">Would you be interested in co-investing with other members of our community in tech enterprise opportunities?</label>
+          <select id="coInvesting" v-model="coInvesting" class="input-field" required>
             <option value="">Select Co-Investing Option</option>
             <option v-for="option in coInvestingOptions" :key="option" :value="option">{{ option }}</option>
           </select>
 
-          <select v-model="convenientInvesting" class="input-field" required>
+          <label for="convenientInvesting">As an investor, do you think it's convenient to invest in tech companies  
+            that fall under our umbrella community and have been moulded by our own technical team?</label>
+          <select id="convenientInvesting" v-model="convenientInvesting" class="input-field" required>
             <option value="">Select Convenient Investing Option</option>
             <option v-for="option in convenientInvestingOptions" :key="option" :value="option">{{ option }}</option>
           </select>
 
-          <select v-model="focusArea" class="input-field" required>
+          <label for="focusArea">Which type of tech enterprise/company would you like to invest in?</label>
+          <select id="focusArea" v-model="focusArea" class="input-field" required>
             <option value="">Select Focus Area</option>
             <option v-for="area in focusAreaOptions" :key="area" :value="area">{{ area }}</option>
           </select>
 
-          <select v-model="impact" class="input-field" required>
+          <label for="impact">How important is the potential for social or environmental impact when evaluating investment  
+            opportunities in tech enterprises within our community?</label>
+          <select id="impact" v-model="impact" class="input-field" required>
             <option value="">Select Impact</option>
             <option v-for="impact in impactOptions" :key="impact" :value="impact">{{ impact }}</option>
           </select>
 
-          <select v-model="viability" class="input-field" required>
+          <label for="viability">What criteria do you use to assess the viability of an investment opportunity within the tech ecosystem of our community?</label>
+          <select id="viability" v-model="viability" class="input-field" required>
             <option value="">Select Viability</option>
             <option v-for="viability in viabilityOptions" :key="viability" :value="viability">{{ viability }}</option>
           </select>
 
-          <input type="text" v-model="expectation" placeholder="Expectation" class="input-field" required />
-          <input type="text" v-model="concern" placeholder="Concern" class="input-field" required />
+          <label for="expectation">Do you have any specific expectations or goals for your investments within our community,  
+            such as financial returns, impact on the tech ecosystem, or community involvement?</label>
+          <textarea id="expectation" v-model="expectation" placeholder="Expectation" class="input-field" required></textarea>
+
+          <label for="concern">Are there any concerns or questions you would like to address regarding your role as an investor  
+            in our community and our collaborative investment approach?</label>
+          <textarea id="concern" v-model="concern" placeholder="Concern" class="input-field" required></textarea>
         </div>
         <button type="submit" class="submit-button w-full">Submit</button>
       </form>
@@ -54,8 +70,8 @@
   </div>
 </template>
 
+
 <script setup lang="ts">
-// @ts-nocheck
 import { ref, onMounted } from 'vue';
 import Notification from '@/views/Components/Notification.vue';
 import Loader from '@/views/Components/Loader.vue';
@@ -192,10 +208,10 @@ const submitForm = async () => {
   background-color: rgba(0,   0,   0,   0.5);
 }
 .max-w-4xl {
-  max-width:   70rem; 
+  max-width:   90rem; 
 }
 
 .h-full {
-  height:   70%;
+  height:   100%;
 }
 </style>
