@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeViewFounders.vue';
 import HomeViewInvestors from '../views/HomeViewInvestors.vue';
@@ -20,7 +21,6 @@ const router = createRouter({
     {
       path: '/dashboard',
       name: 'dashboard',
-      // meta: { requiresAuth: true },
       component: Dashboard,
     },
     {

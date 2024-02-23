@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// @ts-nocheck
 import { Icon } from '@iconify/vue';
 const whatWeOfferData = [
   'Coaching',

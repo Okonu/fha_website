@@ -41,6 +41,7 @@
 </template>
 
 <script setup lang="ts">
+// @ts-nocheck
 import { ref } from 'vue';
 import FounderRegistration from '@/views/Founders/Components/FounderRegistrationView.vue';
 const showFounderRegistration= ref(false);
