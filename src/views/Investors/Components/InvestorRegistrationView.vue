@@ -65,9 +65,9 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import Notification from '@/views/Components/Notification.vue';
-import Loader from './views/Components/Loader.vue';
+import Loader from '@/views/Components/Loader.vue';
 import { defineProps, defineEmits } from 'vue';
-import { BASE_URL } from './config/api.js';
+import { BASE_URL } from '@/config/api.js';
 
 
 const showLoader = ref(false);
