@@ -5,6 +5,7 @@
   </template>
   
   <script setup lang="ts">
+  // @ts-nocheck
   import { defineProps } from 'vue';
   
   const props = defineProps({

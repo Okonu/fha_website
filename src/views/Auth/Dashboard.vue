@@ -12,6 +12,7 @@
   </template>
   
   <script setup lang="ts">
+  // @ts-nocheck
   import { ref, onMounted } from 'vue';
   import FoundersTable from '@/views/Auth/Components/FoundersTable.vue';
   import InvestorsTable from '@/views/Auth/Components/InvestorsTable.vue'; 

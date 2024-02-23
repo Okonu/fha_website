@@ -37,13 +37,4 @@ const router = createRouter({
   ],
 });
 
-// Navigation guard for authentication
-router.beforeEach((to, from, next) => {
-  if (to.meta.requiresAuth && !authStore.token.value) {
-    next('/login');
-  } else {
-    next();
-  }
-});
-
 export default router;
