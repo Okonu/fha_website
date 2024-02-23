@@ -77,10 +77,12 @@ import Notification from '@/views/Components/Notification.vue';
 import Loader from '@/views/Components/Loader.vue';
 import { BASE_URL } from '@/config/api.js';
 
+type NotificationType = "success" | "error";
+const notificationType = ref<NotificationType>('success');
+
 const showLoader = ref(false);
 const showNotification = ref(false);
 const notificationMessage = ref('');
-const notificationType = ref('success');
 
 const props = defineProps({
   show: Boolean,
