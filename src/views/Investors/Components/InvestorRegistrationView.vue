@@ -136,22 +136,22 @@ const viabilityOptions = ref([]);
 
 onMounted(async () => {
   try {
-    const enterpriseLevelsResponse = await fetch(`${BASE_URL}/api/enums/enterprise-levels`);
+    const enterpriseLevelsResponse = await fetch(`http://13.48.195.128/api/enums/enterprise-levels`);
     enterpriseLevels.value = await enterpriseLevelsResponse.json();
 
-    const coInvestingOptionsResponse = await fetch(`${BASE_URL}/api/enums/co-investings`);
+    const coInvestingOptionsResponse = await fetch(`http://13.48.195.128/api/enums/co-investings`);
     coInvestingOptions.value = await coInvestingOptionsResponse.json();
 
-    const convenientInvestingOptionsResponse = await fetch(`${BASE_URL}/api/enums/convenient-investments`);
+    const convenientInvestingOptionsResponse = await fetch(`http://13.48.195.128/api/enums/convenient-investments`);
     convenientInvestingOptions.value = await convenientInvestingOptionsResponse.json();
 
-    const focusAreaOptionsResponse = await fetch(`${BASE_URL}/api/enums/investor-focus-areas`);
+    const focusAreaOptionsResponse = await fetch(`http://13.48.195.128/api/enums/investor-focus-areas`);
     focusAreaOptions.value = await focusAreaOptionsResponse.json();
 
-    const impactOptionsResponse = await fetch(`${BASE_URL}/api/enums/social-env-impacts`);
+    const impactOptionsResponse = await fetch(`http://13.48.195.128/api/enums/social-env-impacts`);
     impactOptions.value = await impactOptionsResponse.json();
 
-    const viabilityOptionsResponse = await fetch(`${BASE_URL}/api/enums/viability-criterias`);
+    const viabilityOptionsResponse = await fetch(`http://13.48.195.128/api/enums/viability-criterias`);
     viabilityOptions.value = await viabilityOptionsResponse.json();
   } catch (error) {
     console.error('Failed to fetch enum values:', error);
@@ -174,7 +174,7 @@ const submitForm = async () => {
   };
 
   try {
-    const response = await fetch(`${BASE_URL}/api/register-investor`, {
+    const response = await fetch(`http://13.48.195.128/api/register-investor`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
