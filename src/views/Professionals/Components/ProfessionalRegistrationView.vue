@@ -13,12 +13,6 @@
         <form @submit.prevent="submitForm" class="w-full h-full flex flex-col justify-between overflow-y-auto">
           <h2><strong><i>YOUR JOURNEY BEGINS HERE</i></strong></h2>
           <h3>Empowering Tech Professionals: Join a Community of Opportunity and Credibility!</h3>
-          <p>Welcome to a thriving epicenter of tech innovation and collaboration! 
-            We're excited to have you considering membership in our dynamic tech community. 
-            As a member, you'll not only gain credibility within the industry but also unlock a world of job opportunities and countless benefits. 
-            Join us on this exhilarating journey to reshape Africa's tech landscape!
-            <br/>
-          </p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 flex-grow">
             <div class="flex flex-col">
               <label for="name" class="mb-2">Name</label>
