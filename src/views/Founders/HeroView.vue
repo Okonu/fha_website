@@ -26,9 +26,8 @@
         <div
           class="cta_buttons flex flex-col lg:flex-row lg:justify-center lg:gap-2 gap-4 font-semibold w-full"
         >
-          <RouterLink to="investors" class="bg-[#F6FAFE4D] rounded-lg py-2 lg:px-5 lg:py-3"
-            >I’m an investor</RouterLink
-          >
+        <button @click="showProfessionalRegistration = true" class="bg-[#4A90E2] rounded-lg py-2 lg:px-5 lg:py-3">Join as a Professional</button>
+          <ProfessionalRegistration :show="showProfessionalRegistration" @close="showProfessionalRegistration = false" />
 
           <button @click="showFounderRegistration = true" class="bg-[#4A90E2] rounded-lg py-2 lg:px-5 lg:py-3">Join as a Founder</button>
           <FounderRegistration :show="showFounderRegistration" @close="showFounderRegistration = false" />
@@ -44,5 +43,8 @@
 // @ts-nocheck
 import { ref } from 'vue';
 import FounderRegistration from '@/views/Founders/Components/FounderRegistrationView.vue';
+import ProfessionalRegistration from '@/views/Professionals/Components/ProfessionalRegistrationView.vue';
+
 const showFounderRegistration= ref(false);
+const showProfessionalRegistration= ref(false);
 </script>
