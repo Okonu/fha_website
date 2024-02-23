@@ -97,15 +97,6 @@
             </div>
           </div>
           <button type="submit" class="submit-button w-full p-2 bg-blue-500 text-white rounded hover:bg-blue-600">Submit</button>
-          <p>
-            <i>We look forward to hearing your thoughts and having you as
-            an active member of our community, where opportunities are boundless, and
-            innovation knows no bounds. Join us today, and together, we'll shape a brighter
-            tech future in Africa.We look forward to hearing your thoughts and having you as
-            an active member of our community, where opportunities are boundless, and
-            innovation knows no bounds. Join us today, and together, we'll shape a brighter
-            tech future in Africa.</i>
-          </p>
         </form>
       </div>
     </div>

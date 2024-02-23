@@ -73,19 +73,7 @@
           </div>
         </div>
         <button type="submit" class="submit-button w-full p-2 bg-blue-500 text-white rounded hover:bg-blue-600">Submit</button>
-        <p>
-          <strong>Empowering Africa's Digital Renaissance: A Vision for a Thriving Tech Ecosystem"</strong>
-          <br/>
-          <i>We envision a future where Africa's tech landscape flourishes with boundless opportunities, fueled by innovation, collaboration, and sustainable growth. 
-          Our mission is to catalyze the transformation of Africa into a global tech powerhouse, where tech entrepreneurs, innovators, and communities thrive. 
-          With a deep commitment to inclusivity, we strive to bridge gaps, unlock potential, and create a dynamic ecosystem where the digital dreams of today become the technological marvels of tomorrow.
-          <br/>
-          In this vision, we see Africa not merely as a recipient of technology but as a driver of global innovation. 
-          We envision a continent where local tech solutions tackle global challenges, where access to tech resources is democratized, 
-          and where the digital divide is bridged with knowledge, opportunity, and empowerment. Our journey is dedicated to realizing this vision, 
-          one partnership, one startup, and one technological breakthrough at a time, as we work together to make Kenya, 
-          Africa, and indeed the world, a hub of tech innovation and sustainable progress.</i>
-        </p>
+      
       </form>
     </div>
   </div>

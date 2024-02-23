@@ -218,22 +218,6 @@
           </div>
         </div>
         <button type="submit" class="submit-button w-full p-2 bg-blue-500 text-white rounded hover:bg-blue-600">Submit</button>
-        <p>
-        <strong>VISION 2028</strong>
-        <br/>
-        We're embarking on an unprecedented journey to craft the 'Mother of All Tech Communities' in Africa. 
-        This partnership represents a nexus of expertise, resources, and shared vision. 
-        We envision an ecosystem where innovation knows no bounds, where tech businesses, startups, consultants, and entrepreneurs flourish together. 
-        Our collective commitment is to generate not just success for a few but prosperity for all. By 2028, we aim to nurture a minimum of 50 thriving 
-        tech companies and create 5000 job opportunities for tech professionals. This vision of shared success is the heartbeat of our partnership, 
-        and we're inviting you to actively shape and participate in this transformative journey.
-        <br/>
-        Our partnership thrives on inclusivity, recognizing that every voice and background holds the potential to enrich our ecosystem. 
-        We're building an innovation hub that spans across digital platforms and events, fostering connections among tech enthusiasts and 
-        professionals across Africa. Your contributions and insights are instrumental in shaping this vibrant tech future. 
-        Together, we are the architects of a brighter, more prosperous tech landscape in Africa—a 
-        future where innovation and success have no limits."
-      </p>
       </form>
     </div>
   </div>
