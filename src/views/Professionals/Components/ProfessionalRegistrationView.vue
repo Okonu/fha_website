@@ -12,6 +12,12 @@
       <div class="bg-white p-6 rounded shadow-lg w-full max-w-4xl h-full backdrop-filter backdrop-blur-md" @click.stop>
         <form @submit.prevent="submitForm" class="w-full h-full flex flex-col justify-between overflow-y-auto">
           <h2><strong><i>YOUR JOURNEY BEGINS HERE</i></strong></h2>
+          <h3>Empowering Tech Professionals: Join a Community of Opportunity and Credibility!</h3>
+          <p>Welcome to a thriving epicenter of tech innovation and collaboration! 
+            We're excited to have you considering membership in our dynamic tech community. 
+            As a member, you'll not only gain credibility within the industry but also unlock a world of job opportunities and countless benefits. 
+            Join us on this exhilarating journey to reshape Africa's tech landscape!
+          </p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 flex-grow">
             <div class="flex flex-col">
               <label for="name" class="mb-2">Name</label>
@@ -22,71 +28,89 @@
               <input type="email" id="email" v-model="email" placeholder="Email" class="input-field w-full p-2 border border-gray-300 rounded" required />
             </div>
             <div class="flex flex-col">
-              <label for="motivation" class="mb-2">Motivation</label>
+              <label for="motivation" class="mb-2">What motivated you to consider joining our tech community, and what are your expectations from this membership?</label>
               <select id="motivation" v-model="motivation" class="input-field w-full p-2 border border-gray-300 rounded" required>
-                <option value="">Select Motivation</option>
+                <option value="">Select</option>
                 <option v-for="motivation in motivations" :key="motivation" :value="motivation">{{ motivation }}</option>
               </select>
             </div>
             <div class="flex flex-col">
-              <label for="credibilityEnhancement" class="mb-2">Credibility Enhancement</label>
+              <label for="credibilityEnhancement" class="mb-2">Credibility is crucial in the tech industry. 
+                How do you envision our community enhancing your professional credibility and reputation within the field?</label>
               <select id="credibilityEnhancement" v-model="credibilityEnhancement" class="input-field w-full p-2 border border-gray-300 rounded" required>
-                <option value="">Select Credibility Enhancement</option>
+                <option value="">Select</option>
                 <option v-for="enhancement in credibilityEnhancements" :key="enhancement" :value="enhancement">{{ enhancement }}</option>
               </select>
             </div>
             <div class="flex flex-col">
-              <label for="interests" class="mb-2">Interests</label>
+              <label for="interests" class="mb-2">Our community offers a broad spectrum of job opportunities. 
+                What types of tech roles or projects are you most interested in pursuing within our network?</label>
               <select id="interests" v-model="interests" class="input-field w-full p-2 border border-gray-300 rounded" required>
-                <option value="">Select Interests</option>
+                <option value="">Select </option>
                 <option v-for="area in interestsAreas" :key="area" :value="area">{{ area }}</option>
               </select>
             </div>
             <div class="flex flex-col">
-              <label for="skills" class="mb-2">Skills</label>
+              <label for="skills" class="mb-2"> Are there specific skill sets or areas of expertise 
+                you possess that you believe would be valuable to other members of the community?</label>
               <input type="text" id="skills" v-model="skills" placeholder="Skills" class="input-field w-full p-2 border border-gray-300 rounded" required />
             </div>
             <div class="flex flex-col">
-              <label for="benefits" class="mb-2">Benefits</label>
+              <label for="benefits" class="mb-2">In addition to job opportunities, 
+                what other benefits or resources are you looking to access through your membership in our tech community?</label>
               <select id="benefits" v-model="benefits" class="input-field w-full p-2 border border-gray-300 rounded" required>
-                <option value="">Select Benefits</option>
+                <option value="">Select</option>
                 <option v-for="option in benefitsOptions" :key="option" :value="option">{{ option }}</option>
               </select>
             </div>
             <div class="flex flex-col">
-              <label for="collaborationEngagement" class="mb-2">Collaboration Engagement</label>
+              <label for="collaborationEngagement" class="mb-2">Networking is a cornerstone of our community. How do you plan to engage with fellow tech professionals, 
+                and what kinds of collaborations or partnerships are you interested in pursuing?</label>
               <select id="collaborationEngagement" v-model="collaborationEngagement" class="input-field w-full p-2 border border-gray-300 rounded" required>
-                <option value="">Select Collaboration Engagement</option>
+                <option value="">Select</option>
                 <option v-for="type in collaborationTypes" :key="type" :value="type">{{ type }}</option>
               </select>
             </div>
             <div class="flex flex-col">
-              <label for="aspirations" class="mb-2">Aspirations</label>
+              <label for="aspirations" class="mb-2"> What are your long-term aspirations within the tech industry, 
+                and how do you see our community playing a role in helping you achieve those goals?</label>
               <select id="aspirations" v-model="aspirations" class="input-field w-full p-2 border border-gray-300 rounded" required>
-                <option value="">Select Aspirations</option>
+                <option value="">Select</option>
                 <option v-for="option in aspirationsOptions" :key="option" :value="option">{{ option }}</option>
               </select>
             </div>
             <div class="flex flex-col">
-              <label for="contributions" class="mb-2">Contributions</label>
+              <label for="contributions" class="mb-2">In your opinion, what unique qualities or contributions 
+                can you bring to the community that would enrich the experiences of other members?</label>
               <input type="text" id="contributions" v-model="contributions" placeholder="Contributions" class="input-field w-full p-2 border border-gray-300 rounded" required />
             </div>
             <div class="flex flex-col">
-              <label for="skillImportance" class="mb-2">Skill Importance</label>
+              <label for="skillImportance" class="mb-2">How important is ongoing learning and 
+                skill development to you, and how can our community support your growth in the tech field?</label>
               <select id="skillImportance" v-model="skillImportance" class="input-field w-full p-2 border border-gray-300 rounded" required>
                 <option value="">Select Skill Importance</option>
                 <option v-for="importance in skillImportances" :key="importance" :value="importance">{{ importance }}</option>
               </select>
             </div>
             <div class="flex flex-col">
-              <label for="goals" class="mb-2">Goals</label>
+              <label for="goals" class="mb-2">Lastly, if you could envision one significant achievement or milestone 
+                that you'd like to accomplish as a member of our tech community, what would it be?</label>
               <select id="goals" v-model="goals" class="input-field w-full p-2 border border-gray-300 rounded" required>
-                <option value="">Select Goals</option>
+                <option value="">Select</option>
                 <option v-for="option in goalsOptions" :key="option" :value="option">{{ option }}</option>
               </select>
             </div>
           </div>
           <button type="submit" class="submit-button w-full p-2 bg-blue-500 text-white rounded hover:bg-blue-600">Submit</button>
+          <p>
+            <i>We look forward to hearing your thoughts and having you as
+            an active member of our community, where opportunities are boundless, and
+            innovation knows no bounds. Join us today, and together, we'll shape a brighter
+            tech future in Africa.We look forward to hearing your thoughts and having you as
+            an active member of our community, where opportunities are boundless, and
+            innovation knows no bounds. Join us today, and together, we'll shape a brighter
+            tech future in Africa.</i>
+          </p>
         </form>
       </div>
     </div>
