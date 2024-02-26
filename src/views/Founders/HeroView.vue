@@ -6,8 +6,8 @@
       alt="hero section background"
       densities="x1 x2"
     />
-    <RouterLink to="/" class="hidden lg:block absolute z-40 w-[90%] mt-14">
-      <img src="/logo.svg" alt="logo" class="w-[250px]" />
+    <RouterLink to="/" class="hidden lg:block absolute z-50 w-[90%] mt-14">
+      <h1 class="text-white font-bold text-xl">Founders Hub Africa</h1>
     </RouterLink>
     <div class="flex flex-col z-50 text-white items-center mt-12 lg:mt-44 lg:pt-8 pb-7">
       <RouterLink to="/"
