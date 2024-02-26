@@ -1,7 +1,12 @@
-// vue.config.js
-module.exports = {
+  module.exports = {
     devServer: {
-      proxy: 'http://13.48.195.128', 
-    }
-  }
+      proxy: {
+        '/api': {
+          target: 'http://13.48.195.128',
+          changeOrigin: true,
+          secure: false,
+        },
+      },
+    },
+  };
   
