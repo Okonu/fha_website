@@ -104,48 +104,6 @@
   };
 </script>
 
-<style scoped>
-.input-field {
-  width:  100%;
-  padding:  10px;
-  margin:  10px  0;
-  border:  1px solid #4A90E2;
-  border-radius:  5px;
-  background-color: #07182C;
-  color: #fff;
-}
-
-.submit-button {
-  padding:  10px;
-  margin:  10px  0;
-  border: none;
-  border-radius:  5px;
-  background-color: #4A90E2;
-  color: #fff;
-  cursor: pointer;
-}
-
-.submit-button:hover {
-  background-color: #3a80c1;
-}
-
-.backdrop-filter {
-  backdrop-filter: blur(10px);
-  background-color: rgba(0,  0,  0,  0.5);
-}
-
-.max-w-4xl {
-  max-width:  100rem;
-}
-
-.h-full {
-  height:  100%;
-}
-.overflow-y-auto {
-  overflow-y: auto;
-}
-</style>
-
 <template>
   <Notification
     v-if="showNotification"
