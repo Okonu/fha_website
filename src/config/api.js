@@ -1,2 +1,2 @@
 // src/config/api.js
-export const BASE_URL = 'http://13.48.195.128';
+export const BASE_URL = 'https://app.foundershub.africa/';
