@@ -171,7 +171,7 @@
             </select>
           </div>
           <div class="flex flex-col">
-            <label for="communitySupport" class="mb-2">How Would You Like the Community to Support Your Tech Business, and What Ideas Do You Have for Vision 2028 and Its Theme?</label>
+            <label for="communitySupport" class="mb-2">How Would You Like the Community to Support Your Tech Business, and What Ideas Do You Have for FHA and Its Theme?</label>
             <textarea id="communitySupport" v-model="communitySupport" placeholder="Community Support" class="input-field w-full p-2 border border-gray-300 rounded" required></textarea>
           </div>
         </div>
