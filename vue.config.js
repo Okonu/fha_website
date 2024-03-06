@@ -2,7 +2,7 @@
     devServer: {
       proxy: {
         '/api': {
-          target: 'https://web.foundershub.africa',
+          target: 'https://web.foundershubafrica.com',
           changeOrigin: true,
           secure: false,
         },
