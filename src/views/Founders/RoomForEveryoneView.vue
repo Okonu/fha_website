@@ -138,11 +138,6 @@ const partnersArr = [
           </div>
         </div>
 
-        <button
-          class="hidden lg:flex w-[191px] py-3 px-5 justify-center items-center gap-2 rounded-lg bg-[#4A90E2] text-base font-semibold leading-6 text-white mb-10"
-        >
-          Join Founders.ke
-        </button>
       </div>
     </section>
   </div>
